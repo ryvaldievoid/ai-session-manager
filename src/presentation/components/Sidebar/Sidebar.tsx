@@ -10,6 +10,7 @@ interface SidebarProps {
   onCreateSession: () => void;
   onSwitchSession: (sessionId: string) => void;
   onDeleteSession: (sessionId: string) => void;
+  onToggleSidebar?: () => void;
 }
 
 export function Sidebar({
@@ -18,6 +19,7 @@ export function Sidebar({
   onCreateSession,
   onSwitchSession,
   onDeleteSession,
+  onToggleSidebar,
 }: SidebarProps) {
   const { theme, setTheme } = useTheme();
 
@@ -25,6 +27,14 @@ export function Sidebar({
     <aside className="w-64 border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 flex flex-col h-full">
       <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex justify-between items-center">
         <h1 className="font-semibold text-lg text-gray-900 dark:text-gray-100">AI Sessions</h1>
+        {onToggleSidebar && (
+          <button
+            onClick={onToggleSidebar}
+            className="text-xs px-2 py-1 rounded bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700"
+          >
+            Hide
+          </button>
+        )}
       </div>
 
       <div className="p-4 flex-1 overflow-y-auto">

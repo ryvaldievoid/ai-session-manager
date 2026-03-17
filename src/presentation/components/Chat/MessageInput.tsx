@@ -33,7 +33,7 @@ export function MessageInput({ onSendMessage, isTyping }: MessageInputProps) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={handleKeyDown}
-          placeholder="Message AI Session Manager..."
+          placeholder="Message"
           className="w-full resize-none rounded-xl border border-gray-300 dark:border-gray-700 bg-gray-50 dark:bg-gray-800 p-3 pr-24 focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 min-h-[52px] max-h-32 overflow-y-hidden"
           rows={1}
           disabled={isTyping}
